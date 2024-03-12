@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   ContainerCreditCard,
   ContainerCreditCardFront,
@@ -8,25 +8,28 @@ import {
   CardHolder,
   CardExpireDate,
 } from "./styles";
-
-import creditcard from "../../assets/credit-card.png";
 import Image from "next/image";
+import creditcard from "../../assets/credit-card.png";
+import { InputContext } from "@/app/services/InputContext"; // Ajuste o caminho de importação conforme necessário
+import formatInput from "../../utils/formatInput";
 
 const CreditCard: React.FC = () => {
+  const { cardNumber, cardName, cardExpireDate } = useContext(InputContext);
+
   return (
     <ContainerCreditCard>
       <ContainerCreditCardFront>
         <Image src={creditcard} alt="credit card" />
         <CreditCardFront>
-          <CardNumber>XXXX-XXXX-XXXX-XXXX</CardNumber>
+          <CardNumber>{cardNumber}</CardNumber>
           <CardInfos>
             <CardHolder>
               <p>CardHolder</p>
-              <p>XXXX-XXXX</p>
+              <p>{formatInput(cardName)}</p>
             </CardHolder>
             <CardExpireDate>
               <p>Expires</p>
-              <p>XX/XX</p>
+              <p>{cardExpireDate}</p>
             </CardExpireDate>
           </CardInfos>
         </CreditCardFront>
