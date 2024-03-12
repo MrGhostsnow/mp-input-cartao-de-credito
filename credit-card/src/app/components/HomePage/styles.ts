@@ -6,6 +6,6 @@ export const ContainerHomePage = styled.div`
     border-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #F3F4F6;
 `

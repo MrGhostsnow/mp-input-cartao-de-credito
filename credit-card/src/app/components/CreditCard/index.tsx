@@ -4,6 +4,7 @@ import {
   ContainerCreditCardFront,
   CreditCardFront,
   CardNumber,
+  CardInfos,
   CardHolder,
   CardExpireDate,
 } from "./styles";
@@ -18,14 +19,16 @@ const CreditCard: React.FC = () => {
         <Image src={creditcard} alt="credit card" />
         <CreditCardFront>
           <CardNumber>XXXX-XXXX-XXXX-XXXX</CardNumber>
-          <CardHolder>
-            <p>CardHolder</p>
-            <p>XXXX-XXXX</p>
-          </CardHolder>
-          <CardExpireDate>
-            <p>Expires</p>
-            <p>XX/XX</p>
-          </CardExpireDate>
+          <CardInfos>
+            <CardHolder>
+              <p>CardHolder</p>
+              <p>XXXX-XXXX</p>
+            </CardHolder>
+            <CardExpireDate>
+              <p>Expires</p>
+              <p>XX/XX</p>
+            </CardExpireDate>
+          </CardInfos>
         </CreditCardFront>
       </ContainerCreditCardFront>
     </ContainerCreditCard>
