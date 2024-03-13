@@ -13,6 +13,8 @@ interface InputContextData {
   setCardExpireDate: (value: string) => void;
   cardCVC: string;
   setCardCVC: (value: string) => void;
+  isFlipped: boolean;
+  setIsFlipped: (value: boolean) => void;
 }
 
 export const InputContext = createContext({} as InputContextData);
@@ -24,6 +26,7 @@ export const InputContextProvider = ({
   const [cardName, setCardName] = useState<string>("");
   const [cardExpireDate, setCardExpireDate] = useState<string>("");
   const [cardCVC, setCardCVC] = useState<string>("");
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <InputContext.Provider
@@ -36,6 +39,8 @@ export const InputContextProvider = ({
         setCardExpireDate,
         cardCVC,
         setCardCVC,
+        isFlipped,
+        setIsFlipped,
       }}
     >
       {children}

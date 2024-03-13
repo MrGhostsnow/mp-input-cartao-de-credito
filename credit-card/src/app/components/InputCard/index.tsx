@@ -19,10 +19,9 @@ const InputCard: React.FC = () => {
     setCardNumber,
     cardName,
     setCardName,
-    cardExpireDate,
-    setCardExpireDate,
     cardCVC,
     setCardCVC,
+    setIsFlipped,
   } = useContext(InputContext);
 
   return (
@@ -31,6 +30,7 @@ const InputCard: React.FC = () => {
       <InputForm>
         <p>Número do cartão</p>
         <InputCardNumber
+          onClick={() => setIsFlipped(false)}
           type={"text"}
           value={cardNumber}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,6 +42,7 @@ const InputCard: React.FC = () => {
       <InputForm>
         <p>Nome impresso</p>
         <InputCardName
+          onClick={() => setIsFlipped(false)}
           type={"text"}
           value={cardName}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,8 +58,10 @@ const InputCard: React.FC = () => {
       <InputForm>
         <p>CVC</p>
         <InputCardCVC
+          onClick={() => setIsFlipped(true)}
           type={"text"}
           value={cardCVC}
+          maxLength={3}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCardCVC(e.target.value)
           }
