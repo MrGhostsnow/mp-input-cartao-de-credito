@@ -1,48 +1,36 @@
-Exercite seus conhecimentos em JavaScript, HTML e CSS para criar uma página de _input_ de cartão de crédito.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 🔨 Requisitos
+## Getting Started
 
-- Desenvolva a aplicação mobile-first.
-- Utilize apenas HTML, CSS e JavaScript.
-- Crie uma página que renderiza um cartão de crédito e um formulário.
-  - Os _inputs_ do formulário deverão capturar as informações em tempo real.
-  - Ao digitar em um campo, as informações do cartão de crédito deverão ser atualizadas automaticamente.
-- Implemente o cartão com as seguintes informaçoes:
-  - Número.
-  - Nome do(a) portador(a).
-  - Data de validade, no modelo `mm/YY`.
-  - Código de segurança (CVV).
+First, run the development server:
 
-## 🔨 Desafios extras para quem quer ir além
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- Implemente a frente e o verso do cartão
-  - Adicione o CVV apenas no verso do cartão.
-  - O verso do cartão só deverá ser visível enquanto o _input_ que representa o **CVV** estiver selecionado.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🎨 Design Sugerido
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Temos uma sugestão de design no Figma. Mas sinta-se livre para utilizar a criatividade e fazer o seu próprio design.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### Screenshot
+## Learn More
 
-![Screenshot](https://github.com/codante-io/mp-input-cartao-de-credito/assets/78622334/7764a24d-826a-4c77-ae72-cfddbca4c04c)
+To learn more about Next.js, take a look at the following resources:
 
-### Figma
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-🔗 [Acesse o link do Figma](https://www.figma.com/community/file/1280597988349667150)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## 👉🏽 Sobre esse mini-projeto
+## Deploy on Vercel
 
-### Tecnologias sugeridas
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- `HTML, CSS e JavaScript`
-
-## ❓ FAQ
-
-### Posso utilizar  React ou outras bibliotecas?
-
-Você pode utilizar as ferramentas que desejar para implementar esse projeto. Porém, o objetivo principal aqui é exercitar os fundamentos de HTML, CSS e JavaScript e a resolução oficial será implementa dessa maneira.
-
-### Posso utilizar frameworks de estilo?
-
-Sim! Apesar do objetivo principal desse projeto ser exercitar suas habilidades com CSS puro, fique à vontade para utilizar as ferramentas que desejar.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
