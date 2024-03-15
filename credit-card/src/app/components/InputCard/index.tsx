@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MonthYearInput from "../MonthYearInput";
 import {
   ContainerInputCard,
@@ -24,6 +24,18 @@ const InputCard: React.FC = () => {
     setIsFlipped,
   } = useContext(InputContext);
 
+  const [numberError, setNumberError] = useState(false);
+  const [numberErrorMessage, setNumberErrorMessage] = useState("");
+
+  const [nameError, setNameError] = useState(false);
+  const [nameErrorMessage, setNameErrorMessage] = useState("");
+
+  const [cvcError, setCvcError] = useState(false);
+  const [cvcErrorMessage, setCvcErrorMessage] = useState("");
+
+  const [expireDateError, setExpireDateError] = useState(false);
+  const [expireDateErrorMessage, setExpireDateErrorMessage] = useState("");
+
   return (
     <ContainerInputCard>
       <TitleContainer>Digite os dados do seu cartão</TitleContainer>
@@ -36,8 +48,17 @@ const InputCard: React.FC = () => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const formattedValue = formatCardNumber(e.target.value);
             setCardNumber(formattedValue);
+            if (formattedValue.length === 16) {
+              // Exemplo de validação
+              setNumberError(false);
+              setNumberErrorMessage("");
+            } else {
+              setNumberError(true);
+              setNumberErrorMessage("O número do cartão deve ter 16 dígitos.");
+            }
           }}
         />
+        {numberError && <p style={{ color: "red" }}>{numberErrorMessage}</p>}
       </InputForm>
       <InputForm>
         <p>Nome impresso</p>
@@ -48,8 +69,17 @@ const InputCard: React.FC = () => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const formattedValue = formatCardName(e.target.value);
             setCardName(formattedValue);
+            if (formattedValue.length > 0) {
+              // Exemplo de validação
+              setNameError(false);
+              setNameErrorMessage("");
+            } else {
+              setNameError(true);
+              setNameErrorMessage("O nome do titular do cartão é obrigatório.");
+            }
           }}
         />
+        {nameError && <p style={{ color: "red" }}>{nameErrorMessage}</p>}
       </InputForm>
       <InputForm>
         <p>Validade</p>
