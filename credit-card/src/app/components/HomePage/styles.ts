@@ -8,4 +8,15 @@ export const ContainerHomePage = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: #F3F4F6;
+
+    @media (max-width: 768px) {
+        width: 730px;
+    }
+
+    @media (max-width: 425px) {
+        width: 375px;
+        height: 650px;
+        flex-direction: column;
+        justify-content: center;
+    }
 `

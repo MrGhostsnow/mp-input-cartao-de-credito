@@ -13,6 +13,10 @@ export const ContainerCreditCardFront = styled.div`
     justify-content: center;
     flex-direction: column;
     height: 300px;
+
+    @media (max-width: 425px) {
+        height: 200px;
+    }
    
 `
 
@@ -24,12 +28,12 @@ export const FlipContainer = styled.div`
 `;
 
 export const Flipper = styled.div<{ isFlipped: boolean }>`
- width: 100%;
- height: 100%;
- transition: transform 0.1s ease-in-out;
- transform-style: preserve-3d;
- position: relative;
- transform: ${props => props.isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+    width: 100%;
+    height: 100%;
+    transition: transform 0.1s ease-in-out;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: ${props => props.isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
 `;
 
 export const FrontImage = styled.div`
@@ -60,6 +64,10 @@ export const CreditCardFront = styled.div`
     height: 80px;
     width: 290px;
     gap: 1.1rem;
+
+    @media (max-width: 425px) {
+        top: -4.5rem;
+    }
 `
 
 export const CardInfos = styled.div`
@@ -109,4 +117,8 @@ export const CardCVC = styled.div`
    right: -4.5rem;
    top: 0.5rem;
    border-radius: 6px;
+
+   @media (max-width: 425px) {
+    top: 3.5rem;
+   }
 `;
